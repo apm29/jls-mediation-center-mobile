@@ -1,0 +1,107 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: color 0.6s, background 0.6s;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+  color: #121212;
+  overflow: hidden;
+}
+
+/* html.dark {
+  background: #121212;
+  color: aliceblue;
+  overflow: hidden;
+} */
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: rgb(13, 148, 136);
+  opacity: 0.75;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+i {
+  display: inline-block;
+}
+
+button {
+  line-height: initial;
+}
+
+.el-loading-spinner svg {
+  display: inline-block;
+}
+
+.el-table__fixed,
+.el-table__fixed-right,
+.el-table__fixed-left {
+  pointer-events: none;
+}
+
+.el-table__fixed-body-wrapper,
+.el-table__fixed-header-wrapper {
+  pointer-events: auto;
+}
+
+.el-table__body-wrapper {
+  @apply scrollable;
+}
+
+.prefixed-title {
+  padding-left: 16px;
+  font-weight: bold;
+  font-size: medium;
+  position: relative;
+}
+
+.prefixed-title::before {
+  content: "";
+  height: 1em;
+  width: 0.25em;
+  background-color: blue;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.paragraph {
+  text-indent: 2em;
+  padding-top: 1em;
+  margin-bottom: 1em;
+}
+
+.el-dialog__header {
+  padding-top: 0 !important;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+.el-dialog__title {
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  color: white !important;
+  padding: 5px 0 !important;
+  text-align: center !important;
+  background-color: #007eff;
+  display: block  !important;
+}
+.el-dialog__headerbtn {
+  top: 0.5em !important;
+  margin-right: 0.5em;
+}
+
+.el-dialog__headerbtn .el-dialog__close{
+  color: white !important;
+}
