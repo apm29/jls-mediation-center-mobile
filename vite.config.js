@@ -56,7 +56,7 @@ export default defineConfig({
     Pages({})
   ],
   server: {
-    port: 6501,
+    port: 6502,
     proxy: {
       "/java": {
         target: "http://mdhjtest.ciih.net/",
