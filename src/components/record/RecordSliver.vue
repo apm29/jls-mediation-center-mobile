@@ -1,6 +1,6 @@
 <template>
-  <div class="record-sliver" text="sm" bg="white">
-    <div class="sender-receiver" text="gray-400" p="x-2 y-1">
+  <div class="record-sliver" text="sm" bg="white" border="t">
+    <div class="sender-receiver" text="gray-400" p="x-4 t-4 b-1">
       <el-tag size="mini" type="info">
         {{ record.sendDeptName }} {{ record.sendUserName }}
       </el-tag>
@@ -11,13 +11,13 @@
         {{ record.acceptDeptName }} {{ record.acceptUserName }}
       </el-tag>
     </div>
-    <div class="sender-receiver" text="gray-400 xs" p="x-2 y-1">
+    <div class="sender-receiver" text="gray-400 xs" p="x-4 y-1">
       {{ dayjs(record.createTime).format("YYYY/MM/DD HH:mm") }}
     </div>
-    <div class="content" p="x-2 t-1 b-3">
+    <div class="content" p="x-4  t-1 b-3">
       {{ record.content }}
     </div>
-    <Attachments hide-on-empty p="x-2" :files="record.file"></Attachments>
+    <Attachments hide-on-empty p="x-4" :files="record.file"></Attachments>
     <div class="action-bar" flex="~" justify="end" p="x-3">
       <el-button
         size="small"
