@@ -8,14 +8,14 @@
     :rules="rules"
   >
     <PropForm label="内容" prop="content" textarea></PropForm>
-    <el-form-item label="接收人">
+    <el-form-item label="接收人" prop="acceptUserId">
       <DeptSelector :dict="depts" v-model="form.acceptDeptId" m="r-2"></DeptSelector>
       <DeptUserSelector
         :deptId="form.acceptDeptId"
         v-model="form.acceptUserId"
       ></DeptUserSelector>
     </el-form-item>
-    <el-form-item label="附件">
+    <el-form-item label="附件" prop="file">
       <FileUploader v-model="form.attatchments"></FileUploader>
     </el-form-item>
     <el-form-item sticky="~" bottom="2" z="30">
@@ -44,7 +44,10 @@ const props = defineProps({
   save: Function,
 });
 
-const rules = {};
+const rules = {
+  content: { required: true, message: "请输入消息内容" },
+  acceptUserId: { required: true, message: "请选择接收人" },
+};
 provide("form", props.form);
 provide("rules", rules);
 
