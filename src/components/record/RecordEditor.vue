@@ -4,7 +4,7 @@
     :model="form"
     size="mini"
     label-position="right"
-    label-width="6rem"
+    label-width="4rem"
     :rules="rules"
   >
     <PropForm label="内容" prop="content" textarea></PropForm>

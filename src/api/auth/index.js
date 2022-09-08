@@ -10,3 +10,15 @@ export function login({
     },
   })
 }
+
+
+export function loginByPhone({
+  phone
+}) {
+  return remote.postForm({
+    url: "/java/user/getToken",
+    data: {
+      phone
+    },
+  })
+}

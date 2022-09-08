@@ -4,7 +4,7 @@
     :model="form"
     size="medium"
     label-position="right"
-    label-width="6rem"
+    label-width="5rem"
     :rules="rules"
   >
     <PropForm label="文书号" prop="fileNo"></PropForm>

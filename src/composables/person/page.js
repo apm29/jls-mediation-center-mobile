@@ -2,6 +2,7 @@ import { getPagedPersons } from "~/api/person";
 
 export function usePersonPaged() {
   const loading = ref();
+  const searchName = ref();
   const total = ref(0);
   const pageNo = ref(1);
   const pageSize = ref(30);
@@ -16,6 +17,7 @@ export function usePersonPaged() {
     getPagedPersons({
       pageNo: unref(pageNo),
       pageSize: unref(pageSize),
+      name: unref(searchName),
     })
       .then((res) => {
         persons.value = res.data.records || [];
@@ -32,6 +34,7 @@ export function usePersonPaged() {
   const search = useDebounceFn(() => onPagination({ refresh: true }), 600);
   return {
     loading,
+    searchName,
     total,
     pageNo,
     pageSize,

@@ -16,6 +16,13 @@ const props = defineProps({
   deptId: [String, Number],
   value: [String, Number],
 });
+const emit = defineEmits("input");
+watch(
+  () => props.deptId,
+  () => {
+    emit("input", null);
+  }
+);
 
 const { users } = useUserDict(() => props.deptId);
 </script>

@@ -6,19 +6,19 @@
     label-position="top"
     label-width="15rem"
     :rules="rules"
-    grid="~ cols-4"
+    grid="~ cols-2"
     gap="2"
   >
     <PropForm label="姓名" prop="name"></PropForm>
-    <PropForm label="身份证" prop="idNo"></PropForm>
+    <PropForm label="身份证" col="span-2" prop="idNo"></PropForm>
     <PropForm label="民族" prop="mz"></PropForm>
     <PropForm label="性别" prop="sex" :selection="GenderSelection"></PropForm>
     <PropForm col="span-2" label="入所原因" prop="reason"></PropForm>
     <PropForm col="span-2" label="违法犯罪性质" prop="wffzxz"></PropForm>
-    <PropForm label="办案单位" prop="baUnit"></PropForm>
-    <PropForm label="拘留天数" prop="detentionDays" number></PropForm>
-    <PropForm label="入所日期" prop="startDate" date="date"></PropForm>
-    <PropForm label="拘留结束日期" prop="endDate" date="date"></PropForm>
+    <PropForm label="办案单位" col="span-2" prop="baUnit"></PropForm>
+    <PropForm label="拘留天数" col="span-2" prop="detentionDays" number></PropForm>
+    <PropForm label="入所日期" col="span-2" prop="startDate" date="date"></PropForm>
+    <PropForm label="拘留结束日期" col="span-2" prop="endDate" date="date"></PropForm>
     <!-- <PropForm col="span-2" label="矛盾化解工作情况" prop="mdhjgzqk" textarea></PropForm>
     <PropForm col="span-2" label="矛盾化解结果" prop="mdhjjg" textarea></PropForm>
     <el-form-item col="span-full" label="关联案件信息" prop="ajxx">
