@@ -59,12 +59,12 @@ export function deletePerson(id) {
 }
 
 export function getPagedPersons({
-  pageNo, pageSize, name
+  pageNo, pageSize, name, idNo
 }) {
   return remote.postForm({
     url: "/java/person/findListByPage",
     data: {
-      pageNo, pageSize, name
+      pageNo, pageSize, name, idNo
     },
   })
 }

@@ -30,6 +30,14 @@
       m="x-2 t-1"
       w="![calc(100%-1rem)]"
       clearable
+    ></el-input> 
+    <el-input
+      placeholder="按身份证搜索"
+      v-model="searchIdNo"
+      @input="search"
+      m="x-2 t-1"
+      w="![calc(100%-1rem)]"
+      clearable
     ></el-input>
     <div
       flex="grow"
@@ -295,6 +303,7 @@ const router = useRouter();
 const {
   loading,
   searchName,
+  searchIdNo,
   total,
   pageNo,
   pageSize,

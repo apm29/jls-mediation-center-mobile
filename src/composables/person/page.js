@@ -3,6 +3,7 @@ import { getPagedPersons } from "~/api/person";
 export function usePersonPaged() {
   const loading = ref();
   const searchName = ref();
+  const searchIdNo = ref();
   const total = ref(0);
   const pageNo = ref(1);
   const pageSize = ref(30);
@@ -22,6 +23,7 @@ export function usePersonPaged() {
       pageNo: unref(pageNo),
       pageSize: unref(pageSize),
       name: unref(searchName),
+      idNo: unref(searchIdNo),
     })
       .then((res) => {
         persons.value = [...persons.value, ...(res.data.records || [])];
@@ -40,6 +42,7 @@ export function usePersonPaged() {
   return {
     loading,
     searchName,
+    searchIdNo,
     total,
     pageNo,
     pageSize,
