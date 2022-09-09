@@ -10,9 +10,9 @@
         首页
       </el-button>
       <h1 flex="grow" mx="6" font="bold">矛盾化解人员</h1>
-      <el-button size="mini" icon="el-icon-refresh" type="primary" plain @click="search">
+      <!-- <el-button size="mini" icon="el-icon-refresh" type="primary" plain @click="search">
         {{ searchName ? "搜索" : "刷新" }}
-      </el-button>
+      </el-button> -->
       <!-- <el-button
         size="mini"
         icon="el-icon-plus"
@@ -30,7 +30,7 @@
       m="x-2 t-1"
       w="![calc(100%-1rem)]"
       clearable
-    ></el-input> 
+    ></el-input>
     <el-input
       placeholder="按身份证搜索"
       v-model="searchIdNo"
