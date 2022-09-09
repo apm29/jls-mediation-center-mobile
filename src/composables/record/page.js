@@ -12,15 +12,19 @@ export function useRecordPaged(getPersonId) {
     if (refresh) {
       pageNo.value = 1;
       total.value = 0;
+      records.value = []
+    }
+    if (total.value !== 0 && total.value <= records.value.length) {
+      return Promise.resolve()
     }
     loading.value = true;
-    getPagedRecords({
+    return getPagedRecords({
       pageNo: unref(pageNo),
       pageSize: unref(pageSize),
       personId: unref(personId),
     })
       .then((res) => {
-        records.value = res.data.records || [];
+        records.value = [...records.value, ...(res.data.records || [])];;
         total.value = parseInt(res.data.total);
       })
       .catch((err) => {

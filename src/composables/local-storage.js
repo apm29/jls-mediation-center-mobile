@@ -1,3 +1,3 @@
-const TOKEN_KEY = "$JLS_MEDIATION_TOKEN";
 
-export const localToken = useLocalStorage(TOKEN_KEY, "");
+export const localToken = useLocalStorage("$JLS_MEDIATION_TOKEN", "");
+export const localInfo = useLocalStorage("$JLS_MEDIATION_INFO", {});

@@ -21,6 +21,7 @@
     "pinia": "^2.0.20",
     "qs": "^6.11.0",
     "vue": "2.7.8",
+    "vue-pull-to": "^0.1.8",
     "vue-router": "3",
     "vuedraggable": "^2.24.3"
   },

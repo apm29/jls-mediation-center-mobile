@@ -1,12 +1,11 @@
 <template>
   <el-cascader
     label="name"
-    :value="value"
+    :value="[value]"
     :options="options"
-    @change="$emit('input', $event)"
+    @change="$emit('input', $event[0])"
     :props="{
       emitPath: false,
-      checkStrictly: true,
     }"
   >
   </el-cascader>

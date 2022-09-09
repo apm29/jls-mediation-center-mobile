@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute top-0 right-0 w-full h-full overflow-hidden z-10 flex flex justify-end"
+    class="absolute top-0 right-0 w-full h-full overflow-hidden z-100000 flex flex-col justify-end"
     :class="[value ? 'pointer-events-auto' : 'pointer-events-none', wrapperClass]"
   >
     <transition name="fade">
@@ -12,7 +12,7 @@
     </transition>
     <transition name="slide-fade">
       <div
-        class="flex flex-col shadow bg-white min-h-96 max-h-100vh overflow-y-scroll p-3 z-30"
+        class="flex flex-col shadow bg-white min-h-96 max-h-80vh overflow-y-scroll p-3 z-30"
         :class="contentClass"
         v-if="value"
       >
@@ -58,13 +58,13 @@ defineProps({
 }
 .slide-fade-enter-from, .slide-fade-leave-to
   /* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(100%);
+  transform: translateY(100%);
   opacity: 0;
 }
 
 .slide-fade-enter-to, .slide-fade-leave-from
   /* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(0%);
+  transform: translateY(0%);
   opacity: 1;
 }
 

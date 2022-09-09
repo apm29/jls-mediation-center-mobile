@@ -12,16 +12,21 @@ export function usePersonPaged() {
     if (refresh) {
       pageNo.value = 1;
       total.value = 0;
+      persons.value = []
+    }
+    if (total.value !== 0 && total.value <= persons.value.length) {
+      return Promise.resolve()
     }
     loading.value = true;
-    getPagedPersons({
+    return getPagedPersons({
       pageNo: unref(pageNo),
       pageSize: unref(pageSize),
       name: unref(searchName),
     })
       .then((res) => {
-        persons.value = res.data.records || [];
+        persons.value = [...persons.value, ...(res.data.records || [])];
         total.value = parseInt(res.data.total);
+        pageNo.value += 1
       })
       .catch((err) => {
         console.error(err);

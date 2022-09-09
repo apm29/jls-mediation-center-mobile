@@ -24,18 +24,32 @@
         type="text"
         icon="el-icon-chat-line-round"
         @click="$emit('reply', record)"
+        v-if="!record.parentId"
       >
         回复
       </el-button>
+      <el-button
+        size="small"
+        type="text"
+        :disabled="!record.children.length"
+        @click="toggleMessage()"
+      >
+        <i i-mdi-chevron-down></i>
+        消息({{ record.children.length }}条)
+      </el-button>
     </div>
-    <div
-      border="1 gray-200 l-4 l-gray-300"
-      rounded="l-lg"
-      m="l-2 b-1"
-      v-for="child of record.children || []"
-    >
-      <RecordSliver :record="child" @reply="$emit('reply', $event)"> </RecordSliver>
-    </div>
+    <Transition name="el-zoom-in-top">
+      <div v-show="showMessage">
+        <div
+          border="1 gray-200 l-4 l-gray-300"
+          rounded="l-lg"
+          m="l-2 b-1"
+          v-for="child of record.children || []"
+        >
+          <RecordSliver :record="child" @reply="$emit('reply', $event)"> </RecordSliver>
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -50,6 +64,7 @@ import Attachments from "../file/Attachments.vue";
 defineProps({
   record: Object,
 });
+const [showMessage, toggleMessage] = useToggle();
 </script>
 
 <style lang="scss" scoped></style>

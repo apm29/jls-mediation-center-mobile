@@ -32,6 +32,7 @@ specifiers:
   vite-plugin-pages: ^0.25.0
   vue: 2.7.8
   vue-demi: ^0.13.8
+  vue-pull-to: ^0.1.8
   vue-router: '3'
   vuedraggable: ^2.24.3
   webpack: '5'
@@ -48,6 +49,7 @@ dependencies:
   pinia: registry.npmmirror.com/pinia/2.0.20_vue@2.7.8
   qs: registry.npmmirror.com/qs/6.11.0
   vue: registry.npmmirror.com/vue/2.7.8
+  vue-pull-to: registry.npmmirror.com/vue-pull-to/0.1.8_vue@2.7.8
   vue-router: registry.npmmirror.com/vue-router/3.5.4
   vuedraggable: registry.npmmirror.com/vuedraggable/2.24.3
 
@@ -3586,6 +3588,17 @@ packages:
         optional: true
     dependencies:
       vue: registry.npmmirror.com/vue/2.7.8
+
+  registry.npmmirror.com/vue-pull-to/0.1.8_vue@2.7.8:
+    resolution: {integrity: sha512-mANDhY4xpK6FCpStz7oAkeKCw8K1SNu+DSvXLjLdj/oTiapKPqS2RmK+vv4d2z6wJ1VaL5ZWyp6O0Vuugus1Qg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-pull-to/-/vue-pull-to-0.1.8.tgz}
+    id: registry.npmmirror.com/vue-pull-to/0.1.8
+    name: vue-pull-to
+    version: 0.1.8
+    peerDependencies:
+      vue: ^2.2.6
+    dependencies:
+      vue: registry.npmmirror.com/vue/2.7.8
+    dev: false
 
   registry.npmmirror.com/vue-router/3.5.4:
     resolution: {integrity: sha512-x+/DLAJZv2mcQ7glH2oV9ze8uPwcI+H+GgTgTmb5I55bCgY3+vXWIsqbYUzbBSZnwFHEJku4eoaH/x98veyymQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-router/-/vue-router-3.5.4.tgz}

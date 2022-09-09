@@ -143,9 +143,11 @@ async function uploadItem(item) {
       url: "/java/upload/uploadFile",
       data: formData,
       onUploadProgress: function (progressEvent) {
-        item.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+        const progress = Math.floor((progressEvent.loaded * 100) / progressEvent.total);
+        item.progress = progress >= 100 ? 99 : progress;
       },
       cancelToken: item.cancelSource.token,
+      silent: false,
     });
     item.url = res.data;
     item.status = StatusConst.SUCCESS;

@@ -44,12 +44,11 @@ const form = reactive({
 function handleLogin() {
   login(form)
     .then((res) => {
-      appStore.name = res.data.name;
-      appStore.phone = res.data.phone;
-      appStore.token = res.token;
+      appStore.setToken(res.token);
+      appStore.setUserInfo(res.data);
     })
     .then(() => {
-      router.replace("/");
+      router.push("/");
     });
 }
 </script>
