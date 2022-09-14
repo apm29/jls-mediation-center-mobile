@@ -26,9 +26,8 @@ router.beforeEach((to, from, next) => {
   } else {
     console.log("未登录");
     loginByPhone({ phone: to.query.phone }).then(res => {
-      appStore.name = res.data.name;
-      appStore.phone = res.data.phone;
-      appStore.token = res.token;
+      appStore.setToken(res.token);
+      appStore.setUserInfo(res.data)
       next()
     }).catch(err => {
       console.log(err);
