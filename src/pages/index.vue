@@ -13,7 +13,7 @@ import AccountSwitch from "~/components/user/AccountSwitch.vue";
         p="t-2"
         class="w-3/5 rounded-lg self-end"
       />
-      <h1 class="float-title">矛盾化解平台</h1>
+      <h1 class="float-title">矛盾化解全流程云服务平台</h1>
     </div>
     <div grid="~ cols-4" justify="start" items="start" p="3" class="app-grid">
       <router-link to="/app/persons" flex="~ col" justify="center" items="center" gap="2">

@@ -9,7 +9,7 @@
     items="center"
   >
     <el-form size="mini" :model="form" label-position="left" label-width="0">
-      <h2 text="2xl white center" m="y-8">矛盾化解平台</h2>
+      <h2 text="2xl white center" m="y-8">矛盾化解全流程云服务平台</h2>
       <el-form-item label="">
         <el-input v-model="form.phone" placeholder="输入手机号">
           <template #prepend> 手机 </template>
